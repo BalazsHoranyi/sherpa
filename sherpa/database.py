@@ -147,6 +147,8 @@ class _Database(object):
             for k, v in trial['parameters'].items():
                 if isinstance(v, numpy.int64):
                     v = int(v)
+                if isinstance(v, numpy.bool_):
+                    v = bool(v)
 
                 new_params[k] = v
                 
